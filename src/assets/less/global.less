@@ -1,0 +1,166 @@
+@baseColor: #88b14b;
+@activeColor: #5c7148;
+@tagColor: #e5efd4;
+@hoverColor: #689a1f;
+@redColor: #f60;
+@bgColor: #f1f5f8;
+@borderColor: #e5e5e5;
+@subColor: #eee;
+//列表边框颜色
+@listColor: #dedede;
+@fontColor: #333;
+@darkColor: #666;
+@grayColor: #999;
+@disabledColor: #ebebe4;
+@placeholderColor: #aaa;
+@radius: .06rem;
+@fontSize: .28rem;
+
+//解决浮动问题
+.cl() {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+//显示省略符号来代表被修剪的文本
+.ellipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+//透明度
+.opacity(@o) {
+  @alp: @o*100;
+  opacity: @o;
+  filter: alpha(opacity=@alp);
+}
+//渐变
+.linear-gradient(@point, @endColor, @startColor ) {
+  background-image: -webkit-linear-gradient(@point, @startColor, @endColor);
+  /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image: -moz-linear-gradient(@point, @startColor, @endColor);
+  /* For Firefox (3.6 to 15) */
+  background-image: -o-linear-gradient(@point, @startColor, @endColor);
+  /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(@point, @startColor, @endColor);
+  /* Standard syntax; must be last */
+}
+//边框阴影
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  box-shadow: @style @c;
+}
+//边框阴影
+.box-shadow(@style, @alpha:50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+//向文本添加阴影
+.text-shadow(@style, @c) when (iscolor(@c)) {
+  text-shadow: @style @c;
+}
+//向文本添加阴影
+.text-shadow(@style, @alpha:50%) when (isnumber(@alpha)) {
+  .text-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+//过渡
+.transition(@style) {
+  -webkit-transition: @style;
+  transition: @style;
+}
+//转换
+.transform(@style) {
+  -ms-transform: @style;
+  -webkit-transform: @style;
+  transform: @style;
+}
+//变形原点
+.transform-origin(@style) {
+  -webkit-transform-origin: @style;
+  transform-origin: @style;
+}
+//动画
+.animation(@style) {
+  -webkit-animation: @style;
+  animation: @style;
+}
+//动画名称
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+//规定列的宽度和列数
+.columns(@style) {
+  -moz-columns: @style;
+  -webkit-columns: @style;
+  columns: @style;
+}
+//规定元素应该被分隔的列数
+.column-count(@count) {
+  -moz-column-count: @count;
+  -webkit-column-count: @count;
+  column-count: @count;
+}
+//规定列之间的间隔
+.column-gap (@px) {
+  -moz-column-gap: @px;
+  -webkit-column-gap: @px;
+  column-gap: @px;
+}
+//设置列之间的宽度、样式和颜色规则
+.column-rule(@style) {
+  -moz-column-rule: @style;
+  -webkit-column-rule: @style;
+  column-rule: @style;
+}
+//允许您以确切的方式定义适应某个区域的具体内容(content-box|border-box|inherit)
+.box-sizing(@val) {
+  -moz-box-sizing: @val;
+  box-sizing: @val;
+}
+//定义弹性容器的侧轴方向上有额外空间时，如何排布每一行。当弹性容器只有一行时无作用
+//(flex-start | flex-end | center | space-between | space-around | stretch)
+.align-content(@val) {
+  -webkit-align-content: @val;
+  align-content: @val;
+}
+//定义一个可伸缩项目的能力
+.flex(@val) {
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-box-flex: @val;
+  /* OLD - Firefox 19- */
+  -moz-box-flex: @val;
+  /* Chrome */
+  -webkit-flex: @val;
+  /* IE 10 */
+  -ms-flex: @val;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex: @val;
+}
+//定义弹性盒子
+.flexbox() {
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -webkit-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -moz-box;
+  /* TWEENER - IE 10 */
+  display: -ms-flexbox;
+  /* NEW - Chrome */
+  display: -webkit-flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: flex;
+}
+//规定了弹性容器中的可伸缩项目在布局时的顺序
+.order(@val) {
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-box-ordinal-group: @val;
+  /* OLD - Firefox 19- */
+  -moz-box-ordinal-group: @val;
+  /* TWEENER - IE 10 */
+  -ms-flex-order: @val;
+  /* NEW - Chrome */
+  -webkit-order: @val;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  order: @val;
+}

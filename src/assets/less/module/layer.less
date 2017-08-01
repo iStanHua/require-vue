@@ -1,0 +1,233 @@
+/*弹层模块*/
+.layer-on {
+  .content {
+    display: none;
+  }
+}
+
+.layer-lock {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+  }
+
+  .layer-mask {
+    display: block;
+  }
+}
+
+.layer-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.layer-title {
+  position: relative;
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .28rem .3rem;
+  }
+
+  .title {
+    padding: .3rem .72rem;
+    line-height: .3rem;
+    font-size: .3rem;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: .01rem solid @listColor;
+
+  }
+}
+
+.layer-btn {
+  text-align: center;
+
+  a {
+    display: inline-block;
+    width: 1.5rem;
+    height: .98rem;
+    line-height: .98rem;
+    font-size: .3rem;
+    color: #fff;
+    background-color: @baseColor;
+  }
+
+  .cancel {
+    color: @darkColor;
+    background-color: #fff;
+  }
+}
+
+.layer-msg {
+  position: fixed;
+  top: 50%;
+  margin-top: -.25rem;
+  z-index: 1000;
+  width: 100%;
+
+  .layer-box {
+    padding: 0 .1rem;
+    text-align: center;
+
+    p {
+      display: inline-block;
+      padding: .15rem .25rem;
+      font-size: .26rem;
+      color: #fff;
+      background-color: rgba(0,0,0,.45);
+      border-radius: @radius;
+      .text-shadow(0 .01rem .03rem,rgba(0,0,0,.1));
+
+    }
+  }
+}
+
+.layer-tips {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  .layer-box {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .layer-body {
+    width: 3rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: @radius;
+  }
+
+  .layer-title {
+    .title {
+      height: .52rem;
+      padding: 0 .52rem;
+      line-height: .52rem;
+      font-size: .18rem;
+      color: #fff;
+      text-align: center;
+      background-color: #6a7f8e;
+      border-radius: @radius @radius 0 0;
+    }
+  }
+
+  .tips {
+    padding: .3rem .2rem;
+    text-align: center;
+  }
+}
+
+.layer-open-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  height: 50%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.layer-open-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  height: 50%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.layer-open-left {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  width: 90%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.layer-open-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 101;
+  width: 90%;
+
+  .layer-box {
+    position: relative;
+    height: 100%;
+  }
+
+  .layer-body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.layer-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  outline: 0;
+  background-color: @bgColor;
+
+  .layer-body,
+  .layer-box {
+    height: 100%;
+    outline: 0;
+    background-color: #fff;
+  }
+
+  .layer-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .miframe {
+    width: 100%;
+    height: 99.6%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

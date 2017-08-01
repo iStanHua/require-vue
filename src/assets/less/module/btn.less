@@ -1,0 +1,63 @@
+/*btn模块*/
+.btn {
+  display: inline-block;
+  width: 100%;
+  height: .9rem;
+  line-height: .9rem;
+  font-size: .34rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  .ellipsis();
+  vertical-align: bottom;
+  background-color: @baseColor;
+  border: .01rem solid @baseColor;
+  border-radius: @radius;
+
+  &:hover {
+    .opacity(.8);
+  }
+}
+
+.btn-cancel {
+  color: @fontColor;
+  background-color: #fff;
+  border-color: @borderColor;
+}
+
+.btn-send {
+  background-color: @hoverColor;
+  border-color: @hoverColor;
+}
+
+.btn-send {
+  background-color: @hoverColor;
+  border-color: @hoverColor;
+}
+
+.btn-send.disabled {
+  background-color: @grayColor;
+  border-color: @grayColor;
+}
+
+.btn-disabled {
+  color: @darkColor !important;
+  background-color: #eaeaea !important;
+  border-color: #ddd !important;
+  cursor: not-allowed;
+}
+
+.btn.disabled {
+  cursor: not-allowed;
+}
+
+input:disabled {
+  background-color: @disabledColor;
+  cursor: not-allowed;
+}
+
+input[type=submit]:disabled {
+  color: @fontColor;
+  border-color: @disabledColor;
+  background-color: @disabledColor;
+}

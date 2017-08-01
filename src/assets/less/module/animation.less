@@ -1,0 +1,398 @@
+/*动画模块*/
+.fadeTin {
+  .animation-name(fadeTin);
+}
+
+.fadeTout {
+  .animation-name(fadeTout);
+}
+
+.fadeBin {
+  .animation-name(fadeBin);
+}
+
+.fadeBout {
+  .animation-name(fadeBout);
+}
+
+.fadeLin {
+  .animation-name(fadeLin);
+}
+
+.fadeLout {
+  .animation-name(fadeLout);
+}
+
+.fadeRin {
+  .animation-name(fadeRin);
+}
+
+.fadeRout {
+  .animation-name(fadeRout);
+}
+
+.fadePin {
+  .animation-name(fadePin);
+}
+
+.fadePout {
+  .animation-name(fadePout);
+}
+
+.bounce-enter-active {
+  .animation(bouncein .35s ease-in);
+}
+
+.bounce-leave-active {
+  .animation(bounceout .35s ease-in);
+}
+
+.fade-enter-active {
+  .animation(fadein .15s ease-in);
+}
+
+.fade-leave-active {
+  .animation(fadeout .15s ease-in);
+}
+
+.fadeT-enter-active {
+  .animation(fadeTin .35s ease-in);
+}
+
+.fadeT-leave-active {
+  .animation(fadeTout .35s ease-in);
+}
+
+.fadeBT-leave-active {
+  .animation(fadeTout .35s ease-in);
+}
+
+.fadeB-enter-active {
+  .animation(fadeBin .35s ease-in);
+}
+
+.fadeB-leave-active {
+  .animation(fadeBout .35s ease-in);
+}
+
+.fadeL-enter-active {
+  .animation(fadeLin .35s ease-in);
+}
+
+.fadeL-leave-active {
+  .animation(fadeLout .35s ease-in);
+}
+
+.fadeR-enter-active {
+  .animation(fadeRin .35s ease-in);
+}
+
+.fadeR-leave-active {
+  .animation(fadeRout .35s ease-in);
+}
+@-webkit-keyframes progress-stripes {
+  from {
+    background-position: 40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-stripes {
+  from {
+    background-position: 40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* 淡入 */
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+/* 淡入-从上 */
+@-webkit-keyframes fadeTin {
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeTin {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* 淡出-从上 */
+@-webkit-keyframes fadeTout {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-100%);
+  }
+}
+@keyframes fadeTout {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+/* 淡入-从下 */
+@-webkit-keyframes fadeBin {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeBin {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* 淡出-从下 */
+@-webkit-keyframes fadeBout {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(100%);
+  }
+}
+@keyframes fadeBout {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+/* 淡入-从左 */
+@-webkit-keyframes fadeLin {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeLin {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* 淡出-从左 */
+@-webkit-keyframes fadeLout {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes fadeLout {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* 淡入-从右 */
+@-webkit-keyframes fadeRin {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeRin {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* 淡出-从右 */
+@-webkit-keyframes fadeRout {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+  }
+}
+@keyframes fadeRout {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* 页面淡入 */
+@-webkit-keyframes fadePin {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadePin {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+/* 页面淡出 */
+@-webkit-keyframes fadePout {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes fadePout {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* 弹入 */
+@-webkit-keyframes bouncein {
+  0% {
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes bouncein {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* 反弹入 */
+@-webkit-keyframes bounceout {
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes bounceout {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

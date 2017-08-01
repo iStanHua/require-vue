@@ -1,0 +1,21 @@
+{
+  "name": "require-vue",
+  "version": "1.0.0",
+  "description": "require+vue",
+  "scripts": {
+    "dest": "grunt"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.0.1",
+    "matchdep": "^1.0.1",
+    "time-grunt": "^1.4.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
