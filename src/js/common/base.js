@@ -16,8 +16,9 @@
         },
         /**
          * 获取参数值
+        * @param {string} name 参数名称
          */
-        param: function (name) {
+        params: function (name) {
             var _reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
             var _m = location.search.substr(1).match(_reg);
             var context = '';
@@ -397,6 +398,22 @@
         text: function () {
             return (typeof this.elements[0].textContent == 'string') ? this.elements[0].textContent : this.elements[0].innerText;
         },
+        get: function (index) {
+            if (this.length > 0) {
+                if (index == undefined) this.elements[0];
+                if (index > (this.length - 1)) {
+                    return this.elements;
+                }
+                return this.elements[index];
+            }
+            else {
+                return null;
+            }
+        }
+        ,
+        /**
+         * 设置过渡动画
+         */
         transform: function (style) {
             this.elements[0].style.webkitTransform = style;
             this.elements[0].style.transform = style;

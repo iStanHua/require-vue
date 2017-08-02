@@ -1,5 +1,13 @@
 @import '../base.less';
 
+body,
+html {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
 .wrapper {
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
@@ -78,8 +86,8 @@
 
 .page {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 15px;
+  bottom: 15px;
   left: 15px;
   right: 15px;
   z-index: 1;
@@ -95,6 +103,10 @@
   columns: calc(100vw - 30px) 1;
   -webkit-column-gap: 15px;
   column-gap: 15px;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
   p {
     font-size: .32rem;

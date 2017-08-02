@@ -479,21 +479,6 @@ iframe {
 
 .section {
   position: relative;
-  margin-bottom: .2rem;
-  background-color: #fff;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -.01rem;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: @listColor;
-    .transform(scaleY(.5));
-    .transform-origin(0 0);
-  }
-
   .panel-title {
     position: relative;
     padding: .32rem .20rem;
@@ -546,12 +531,12 @@ iframe {
     }
   }
 }
-@media screen and (max-width:7.5rem) {
+@media screen and (max-width:750px) {
   .wrapper {
     width: 100%;
   }
 }
-@media screen and (max-device-width:4.8rem) {
+@media screen and (max-device-width:480px) {
   a,
   b,
   body,

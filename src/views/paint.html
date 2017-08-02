@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable-style" content="blank" />
     <meta name="format-detection" content="telephone=no,email=no" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/app/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/app/index.css" />
     <script type="text/javascript">
         (function (a, f) { var g = a.documentElement; var d = 750; var c = "orientationchange" in f ? "orientationchange" : "resize"; var e = navigator.userAgent.toLowerCase().match(/iphone|ipad|ipod/i); var b = function () { var h = g.clientWidth; if (!h) { return } if (h >= d) { h = d } g.style.fontSize = 100 * (h / d) + "px" }; b(); if (e) { g.classList.add("iosx" + f.devicePixelRatio) } if (a.addEventListener) { f.addEventListener(c, b, false) } })(document, window);
     </script>
@@ -139,7 +139,27 @@
             p.innerHTML = msg + "\n" + p.innerHTML;
         }
     </script>
-    </script>
+    <!-- <script src="/js/common/base.js"></script> -->
+    <!-- <script>
+        var $app = new Stan('#app');
+        $app.on('click', function () {
+            console.log('hi');
+        });
+        $app.addClass('app').removeClass('page');
+        console.log($app.text());
+        stan.cookie.set('_cookie_app', 'vueJS + require', 2);
+        console.log(stan.cookie.get('_cookie_app'));
+        $app.transform("translate(0,50px)");
+        stan.store.set('_store_app', { list: [1, 2, 3, 4, 5, 6] });
+        console.log(stan.array.remove(stan.store.get('_store_app').list, 3));
+        // stan.http({
+        //     type:'get',
+        //     url: 'http://211.149.193.19:8080/api/customers',
+        //     success: function (res) {
+        //         console.log(res);
+        //     }
+        // });
+    </script> -->
 </body>
 
 </html>
