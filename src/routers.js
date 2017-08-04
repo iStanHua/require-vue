@@ -16,6 +16,7 @@ define(function (require) {
         }
     }
     var router = new vueRouter({
+        mode: 'history',
         routes: [
             {
                 path: '/index/:id?',

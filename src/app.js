@@ -1,9 +1,11 @@
 requirejs.config({
     baseUrl: './js',
     paths: {
+        text: 'lib/text',
         vue: 'lib/vue',
         vueResource: 'lib/vue-resource',
         vueRouter: 'lib/vue-router',
+        vuex: 'lib/vuex',
         base: 'common/base'
     },
     shim: {
@@ -14,8 +16,24 @@ requirejs.config({
         'vueRouter': {
             deps: ['vue'],
             exports: 'vueRouter'
+        },
+        'vuex': {
+            deps: ['vue'],
+            exports: 'vuex'
         }
     },
+    packages: [
+        {
+            name: 'components',
+            location: 'components',
+            main: 'components'
+        },
+        {
+            name: "views",
+            location: "views",
+            main: "views"
+        }
+    ],
     urlArgs: 'v=20170720'
 });
 

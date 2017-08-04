@@ -1,0 +1,43 @@
+@import '../base.less';
+
+.listview {
+  padding: .2rem .4rem;
+  background-color: #fff;
+
+  .checkbox {
+    position: relative;
+    padding-left: .6rem;
+    margin: .2rem 0;
+    line-height: .42rem;
+    font-size: .28rem;
+
+    i {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: .4rem;
+      height: .4rem;
+      background-color: #fff;
+      border: .01rem solid @borderColor;
+      border-radius: @radius;
+    }
+
+    &.selected {
+      i {
+        background-color: @baseColor;
+        border-color: @baseColor;
+
+        &:before {
+          content: '√';
+          padding-left: .12rem;
+          font-size: .24rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .checklist {
+    padding: .05rem 0 .05rem .6rem;
+  }
+}

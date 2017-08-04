@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>checkbox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable-style" content="blank" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <link rel="stylesheet" type="text/css" href="/css/app/checkbox.css" />
+    <script type="text/javascript">
+        (function (a, f) { var g = a.documentElement; var d = 750; var c = "orientationchange" in f ? "orientationchange" : "resize"; var e = navigator.userAgent.toLowerCase().match(/iphone|ipad|ipod/i); var b = function () { var h = g.clientWidth; if (!h) { return } if (h >= d) { h = d } g.style.fontSize = 100 * (h / d) + "px" }; b(); if (e) { g.classList.add("iosx" + f.devicePixelRatio) } if (a.addEventListener) { f.addEventListener(c, b, false) } })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="page" id="app">
+        <div class="content">
+            <div class="wrapper">
+                <div class="listview">
+                    <div class="item" v-for="(item,i) in list">
+                        <div :class="{checkbox:true,selected:item.checked}" @click="parentClick(i)">
+                            <i></i>
+                            <span v-text="item.text"></span>
+                        </div>
+                        <div class="checklist">
+                            <div :class="{checkbox:true,selected:data.checked}" v-for="(data, k) in item.children" @click="childrenClick(data,i)">
+                                <i></i>
+                                <span v-text="data.text"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/lib/vue.js"></script>
+    <script type="text/javascript" src="/js/app/checkbox.js"></script>
+</body>
+
+</html>

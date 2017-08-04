@@ -26,7 +26,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'src',
-                    src: ['**/*', '!assets/**/*.less'],
+                    src: ['**/*', '!**/*.less'],
                     dest: 'dist',
                     filter: 'isFile'
                 }]
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'src',
-                    src: ['**/*', '!assets/app/**/*.js', '!assets/common/**/*.js', '!assets/components/**/*.js', '!assets/**/*.less'],
+                    src: ['**/*', '!app/**/*.js', '!common/**/*.js', '!components/**/*.js', '!**/*.less'],
                     dest: 'dist',
                     filter: 'isFile'
                 }]
@@ -47,9 +47,9 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: 'src/assets/less',
+                    cwd: 'src/less',
                     src: ['**/*.less', '!base.less', '!global.less', '!module/**/*.less'],
-                    dest: 'dist/assets/css',
+                    dest: 'dist/css',
                     ext: '.css'
                 }]
             }
@@ -58,9 +58,9 @@ module.exports = function (grunt) {
             css: {
                 files: [{
                     expand: true,
-                    cwd: 'dist/assets/css',
+                    cwd: 'dist/css',
                     src: ['**/*.css'],
-                    dest: 'dist/assets/css'
+                    dest: 'dist/css'
                 }]
             }
         },
@@ -69,22 +69,9 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['**/*.js', '!assets/js/lib'],
+                    src: ['**/*.js', '!js/lib'],
                     dest: 'dist'
                 }]
-            }
-        },
-        template: {
-            compile: {
-                options: {
-                    root: 'src/template/',
-                    data: {
-                        v: '<%= pkg.version %>'
-                    }
-                },
-                files: [
-                    { src: ['**/*.html', '!template/**/*.html'], dest: 'dist', expand: true, cwd: 'src' }
-                ]
             }
         }
     });

@@ -4,13 +4,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <title>首页</title>
+    <title>carousel</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable-style" content="blank" />
     <meta name="format-detection" content="telephone=no,email=no" />
-    <link rel="stylesheet" type="text/css" href="/css/app/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/app/carousel.css" />
     <script type="text/javascript">
         (function (a, f) { var g = a.documentElement; var d = 750; var c = "orientationchange" in f ? "orientationchange" : "resize"; var e = navigator.userAgent.toLowerCase().match(/iphone|ipad|ipod/i); var b = function () { var h = g.clientWidth; if (!h) { return } if (h >= d) { h = d } g.style.fontSize = 100 * (h / d) + "px" }; b(); if (e) { g.classList.add("iosx" + f.devicePixelRatio) } if (a.addEventListener) { f.addEventListener(c, b, false) } })(document, window);
     </script>
@@ -18,19 +18,16 @@
 
 <body>
     <div class="page" id="app">
-        <p>Current route name: {{ $route.name }}</p>
-        <router-link to="/index">index</router-link>
-        <router-link to="/index/home">/index/home</router-link>
-        <router-link to="/regex/home">/regex/home</router-link>
-        <router-link :to="{ name: 'regex', params: { id: 123 }}">/regex/123</router-link>
-        <router-link to="/foo">Foo</router-link>
-        <router-link to="/user/foo">/user/foo</router-link>
-        <router-link to="/user/bar">/user/foo</router-link>
-        <router-link to="/user/foo/index">/user/foo/index</router-link>
-        <router-link to="/user/foo/regex" replace>/user/foo/regex</router-link>
-        <router-view></router-view>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-item-1 active">1</div>
+                <div class="carousel-item carousel-item-2">2</div>
+                <div class="carousel-item carousel-item-3">3</div>
+            </div>
+        </div>
     </div>
-    <script src="/js/lib/require.js" data-main="app"></script>
+    <script src="/js/common/base.js"></script>
+    <script src="/js/app/carousel.js"></script>
 </body>
 
 </html>
