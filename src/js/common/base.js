@@ -29,45 +29,6 @@
             return context == null || context == '' || context == 'undefined' ? '' : decodeURI(context);
         },
         /**
-         * 获取和设置cookie
-        * @param {string} name cookie名称
-        * @param {string} value cookie值
-        * @param {string} expiredays cookie过期时间
-         */
-        cookie: {
-            get: function (name) {
-                var _arr;
-                var _reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
-                if (_arr = document.cookie.match(_reg)) {
-                    _reg = null;
-                    return (_arr[2]);
-                } else {
-                    _reg = null;
-                    return '';
-                }
-            },
-            set: function (name, value, expiredays) {
-                var _exp = new Date();
-                _exp.setDate(_exp.getDate() + expiredays);
-                console.log(_exp.toGMTString());
-                document.cookie = name + '=' + escape(value) + ((expiredays == null) ? "" : "; expires=" + _exp.toGMTString());
-                _exp = null;
-            }
-        },
-        /**
-         * 获取和设置没有时间限制的数据存储
-        * @param {string} name 名称
-        * @param {string} value 值
-         */
-        store: {
-            get: function (name) {
-                return JSON.parse(localStorage.getItem(name) || '');
-            },
-            set: function (name, value) {
-                localStorage.setItem(name, JSON.stringify(value));
-            }
-        },
-        /**
          * XMLHttpRequest
         * @param {string} type 请求方式，包括POST和GET两种方式
         * @param {object} header 向请求添加HTTP头。
@@ -139,6 +100,45 @@
             };
         },
         /**
+         * 获取和设置cookie
+        * @param {string} name cookie名称
+        * @param {string} value cookie值
+        * @param {string} expiredays cookie过期时间
+         */
+        cookie: {
+            get: function (name) {
+                var _arr;
+                var _reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+                if (_arr = document.cookie.match(_reg)) {
+                    _reg = null;
+                    return (_arr[2]);
+                } else {
+                    _reg = null;
+                    return '';
+                }
+            },
+            set: function (name, value, expiredays) {
+                var _exp = new Date();
+                _exp.setDate(_exp.getDate() + expiredays);
+                console.log(_exp.toGMTString());
+                document.cookie = name + '=' + escape(value) + ((expiredays == null) ? "" : "; expires=" + _exp.toGMTString());
+                _exp = null;
+            }
+        },
+        /**
+         * 获取和设置没有时间限制的数据存储
+        * @param {string} name 名称
+        * @param {string} value 值
+         */
+        store: {
+            get: function (name) {
+                return JSON.parse(localStorage.getItem(name) || '');
+            },
+            set: function (name, value) {
+                localStorage.setItem(name, JSON.stringify(value));
+            }
+        },
+        /**
          * 数组常见操作
          */
         array: {
@@ -206,8 +206,38 @@
                 if (_index == -1) return;
                 arr.splice(_index, 1);
                 return arr;
+            },
+            /**
+             * 去掉数组重复的值
+            * @param {array} arr 当前数组
+            */
+            unique: function (arr) {
+                var _arr = [];
+                var _obj = {};
+                for (var i = 0; i < arr.length; i++) {
+                    var _a = arr[i]
+                    if (!_obj[_a]) {
+                        _arr.push(_a);
+                        _obj[_a] = 1;
+                        _a = null;
+                    }
+                }
+                _obj = null;
+                return _arr;
             }
 
+        },
+        /**
+         * 会从一个字符串的两端删除空白字符
+        * @param {string} value 值
+         */
+        trim: function (value) {
+            if (String.prototype.trim()) {
+                return value.trim();
+            }
+            else {
+                return value.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+            }
         },
 
 
