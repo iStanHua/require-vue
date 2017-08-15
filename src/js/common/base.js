@@ -439,8 +439,45 @@
             else {
                 return null;
             }
-        }
-        ,
+        },
+        /**
+         * 节点（元素）的父节点
+         */
+        parent: function () {
+            return this.elements[0].parentNode;
+        },
+        /**
+         * 节点（元素）的子节点
+         */
+        children: function () {
+            return this.elements[0].parentNode.children();
+        },
+        /**
+         * 前一个同胞节点
+         */
+        prev: function () {
+            return this.elements[0].previousSibling;
+        },
+        /**
+         * 下一个同胞节点
+         */
+        next: function () {
+            return this.elements[0].nextSibling;
+        },
+        /**
+         * 节点索引值
+         */
+        index: function () {
+            var _eles = this.children();
+            var _index = 0;
+            for (var i = 0; _eles.length; i++) {
+                if (_eles[i] == this.elements[0]) {
+                    _index = i;
+                    return;
+                }
+            }
+            return _index;
+        },
         /**
          * 设置过渡动画
          */
