@@ -75,8 +75,8 @@ var touchEvents = {
     touchmove: 'ontouchend' in document ? 'touchmove' : 'mousemove',
     touchend: 'ontouchend' in document ? 'touchend' : 'mouseup',
     touches: function (e) {
-        event.preventDefault();
-        event.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
         var _x = 0;
         var _y = 0;
         if (e.targetTouches && e.targetTouches[0]) {

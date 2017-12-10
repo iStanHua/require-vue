@@ -8,6 +8,7 @@ module.exports = function (grunt) {
             options: {
                 hostname: 'localhost',
                 keepalive: true,
+                open: true,
                 livereload: 35729,
             },
             dest: {

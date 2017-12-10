@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "require+vue",
   "scripts": {
-    "dest": "grunt"
+    "dev": "grunt"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
