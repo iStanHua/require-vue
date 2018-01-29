@@ -6,8 +6,7 @@
          */
         device: {
             pc: function () {
-                return !(this.android() || this.iphone() || this.ipad() || /midp/.test(stan.ua) || /symbianos/.test(stan.ua) ||
-                    /windows ce/.test(stan.ua) || /windows mobile/.test(stan.ua) || /windows phone/.test(stan.ua))
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(stan.ua)? false: true
             },
             android: function () { return /android/.test(stan.ua) },
             iphone: function () { return /iphone/.test(stan.ua) || /ipod/.test(stan.ua) },
