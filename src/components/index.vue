@@ -8,12 +8,19 @@
     <!-- 分页 -->
     <nav class="pull-right">
         <ul class="pagination form-inline">
-            <li><a v-on:click="prevpage">&laquo;</a></li>
-            <li v-bind:class="{'active':pg.num == page}" v-for="pg in pages"><a v-on:click="jumppage(pg.num)">{{pg.num}}</a></li>
-            <li><a v-on:click="nextpage">&raquo;</a></li>
+            <li>
+                <a v-on:click="prevpage">&laquo;</a>
+            </li>
+            <li v-bind:class="{'active':pg.num == page}" v-for="pg in pages">
+                <a v-on:click="jumppage(pg.num)">{{pg.num}}</a>
+            </li>
+            <li>
+                <a v-on:click="nextpage">&raquo;</a>
+            </li>
 
-            <li class="pull-left jumpinput"><input type="text" class="form-control" style="width:60px;" v-model="page" v-on:keyup.13="jumppage(page)"> /
-                {{pagelen}}</li>
+            <li class="pull-left jumpinput">
+                <input type="text" class="form-control" style="width:60px;" v-model="page" v-on:keyup.13="jumppage(page)"> / {{pagelen}}
+            </li>
         </ul>
     </nav>
 </template>
